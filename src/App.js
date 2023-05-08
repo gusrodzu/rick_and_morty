@@ -1,5 +1,5 @@
 //Commons import
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 //CSS
@@ -9,46 +9,54 @@ import "./App.css";
 import Cards from "./components/Cards/Cards.jsx";
 import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
-
+import Form from "./components/Form/Form";
 
 //Rooter-Dom
-import { Routes, Route } from "react-router-dom";
-import PathRoutes from "./components/helpers/Routes.helper";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Detail from "./components/Detail/Detail";
-
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const EMAIL = "ejemplo@gmail.com";
+  const PASSWORD = "password123";
+
+  useEffect(() => {
+    if (!access) navigate("/");
+  }, [access, navigate]);
 
   const onSearch = (id) => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
+    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
+      } else {
+        window.alert("¡No hay personajes con este ID!");
       }
-    );
+    });
   };
 
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== Number(id)));
   };
 
+  const login = (userData) => {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate("/home");
+    }
+  };
+
   return (
     <div className="App">
-      <NavBar onSearch={onSearch} />
+      {pathname !== "/" && <NavBar onSearch={onSearch} />}
       <Routes>
-        <Route path={PathRoutes.HOME} element={<Cards characters={characters} onClose={onClose} />}/>
-        <Route path={PathRoutes.ABOUT} element={<About />} />
-        <Route path={PathRoutes.DETAIL} element={<Detail />} />
-
-      
+        <Route path={"/"} element={<Form login={login} />} />
+        <Route path={"/home"} element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path={"/about"} element={<About />} />
+        <Route path={"/detail/:id"} element={<Detail />} />
       </Routes>
-
-      {/* <NavBar onSearch ={ onSearch}  />
-         <Cards characters={characters} onClose={onClose} /> */}
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Card(props) {
 
       <div className={styles.contentCard}>
 
-        <Link to={"detail/${id}"}>
+      <Link to={`detail/${id}`}>
           <h2 className={styles.nameCard}>{name}</h2>
         </Link>
 
