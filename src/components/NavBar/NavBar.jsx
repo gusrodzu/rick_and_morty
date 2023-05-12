@@ -20,7 +20,7 @@ const NavBar = (props) => {
         </Link>
         <Link className={styles.link} to={PathRoutes.DETAIL}>
           {" "}
-          DETAIL
+          Detail
         </Link>
         <Link className={styles.link} to={PathRoutes.FAVORITES}>
           {" "}
