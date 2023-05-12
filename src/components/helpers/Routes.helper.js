@@ -1,7 +1,8 @@
 const PathRoutes= {
     HOME: "/home",
     ABOUT: "/about",
-    DETAIL: "/deatil/:id",
+    DETAIL: "/detail/:id",
+    FAVORITES: "/favorites",
 }
 
  export default PathRoutes;
