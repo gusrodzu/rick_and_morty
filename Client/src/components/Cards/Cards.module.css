@@ -1,0 +1,16 @@
+.mainDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .Card {
+    padding: 16px;
+    width: 300px;
+    margin: 16px;
+    box-shadow: inset;
+  }
+  
+  
+  
+  
