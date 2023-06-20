@@ -89,10 +89,7 @@ function App() {
          <Routes>
             <Route path = "/" element={<Form login={login}/>}/>
             <Route path = "/home" element={
-               <Cards
-               characters={characters}
-               onClose={onClose} 
-               />}>
+               <Cards characters={characters} onClose={onClose} />}>
             </Route>
             <Route path = "/about" element={<About/>}/>
             <Route path = "/detail/:id" element={<Detail/>}></Route>
