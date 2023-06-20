@@ -25,7 +25,7 @@ export default function SearchBar(props) {
             onSearch(id);
           }}
         >
-          Squinchear
+          SQUANCH!
         </button>
       </div>
     </div>
