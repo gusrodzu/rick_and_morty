@@ -26,6 +26,7 @@ const Form = (props) => {
 
         <form onSubmit={handleSubmit}>
           <h2>Inicia sesión</h2>
+          <h5>No se requiere usuario para ingresar</h5>
           <label htmlFor="">Usuario</label>
           <input
             type="text"
@@ -55,6 +56,7 @@ const Form = (props) => {
           {errors.p1 ? <p>{errors.p1}</p> : <p>{errors.p2}</p>}
 
           <button className={styles["btn"]}>SQUANCH!</button>
+          
         </form>
 
         {/* <p>Datos de acceso Demo</p>
