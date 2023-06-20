@@ -36,8 +36,6 @@ function Card(props) {
 
   return (
     <div className={styles.wrapperCard}>
-      
-
       <button
         className={styles.btn}
         onClick={() => {
@@ -47,23 +45,34 @@ function Card(props) {
         X
       </button>
       <img className={styles.imgCard} src={image} alt="Imagen personaje" />
-      <h2 className={styles.tagCard}>{status}</h2>
+      <h2 className={styles.tagCard}>{status} - {species}</h2>
       <div className={styles.contentCard}>
         <Link to={`/detail/${id}`}>
           <h2 className={styles.nameCard}>{name}</h2>
         </Link>
 
-        <p>{species}</p>
         <p>{gender}</p>
         {/* <p>{origin?.name}</p> */}
-
-        {isFav ? (
-        <button className={styles.button} onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button className={styles.button} onClick={handleFavorite}>🤍</button>
-      )}
       </div>
-      
+
+      <div className={styles.contentButton}>
+     
+       
+      </div>
+      {isFav ? (
+        <button className={styles.button} onClick={handleFavorite}>
+          ❤️
+        </button>
+      ) : (
+        <button className={styles.button} onClick={handleFavorite}>
+          🤍
+        </button>
+      )}
+
+
+
+
+    
     </div>
   );
 }

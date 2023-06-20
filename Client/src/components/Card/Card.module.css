@@ -84,18 +84,27 @@ p {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  
 }
 
 .button:focus {
   outline: none;
 }
 
+
+.contentButton{
+  align-items: center;
+}
+
 .button-favorite {
   color: #ff0000; /* Color del corazón lleno */
+  align-items: center;
 }
 
 .button-unfavorite {
   color: #ffffff; /* Color del corazón vacío */
+  align-items: center;
 }
 
