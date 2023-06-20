@@ -1,15 +1,37 @@
+
+p {
+  display: block;
+  margin-block-start: .5px;
+  margin-block-end: .5px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-decoration: none;
+}
+
+
+
+
+
+
 .wrapperCard {
   width: 320px;
   height: auto;
-  border: 2px solid #0b5ed7;
-  background-color: aliceblue;
+  background-color: #87F54E;
   border-radius: 11px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
+
+
+/* .wrapperCard {
+  background-color: #87F54E;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+} */
 
 .btn {
   position: absolute;
@@ -31,7 +53,6 @@
   
 
 .tagCard {
-
     background-color: green;
     color: white;
     position: absolute;
@@ -41,8 +62,6 @@
     padding: 5px 5px;
     font-size: 15px;
     border-radius: 5px;
-
-  
 }
   
 
@@ -52,11 +71,9 @@
 }
 
 
-.nameCard{
-    font-weight: 800;
-    font-size: 1.5rem;
-    text-align: left;
-
+.nameCard {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 
@@ -65,7 +82,9 @@
   border: none;
   font-size: 30px;
   cursor: pointer;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:focus {
@@ -79,3 +98,4 @@
 .button-unfavorite {
   color: #ffffff; /* Color del corazón vacío */
 }
+

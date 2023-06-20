@@ -1,6 +1,6 @@
 
 .inputBar{
-  background-color: #fff;
+  background-color: transparent;
 
 
 }
@@ -8,7 +8,7 @@
 
 .input {
   width: 40%;
-  border: 2px solid #0b5ed7;
+  border: 2px solid #87F54E;
   border-radius: 8px;
   padding: 10px 15px;
 
@@ -18,8 +18,8 @@
 
 .btnInput {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #87F54E;
+  border-color: #0d6e;
   box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
   padding: 10px 15px;
   border-radius: 8px;

@@ -8,7 +8,7 @@ const NavBar = (props) => {
   const { onSearch } = props;
 
   return (
-    <div className={styles.navBar}>
+    <div className={styles.navBar} >
       <div className={styles.wrapperlink}>
         <Link className={styles.link} to={PathRoutes.HOME}>
           {" "}
@@ -25,9 +25,9 @@ const NavBar = (props) => {
         <Link className={styles.link} to={PathRoutes.FAVORITES}>
           {" "}
           Favorite
-        </Link>
+        </Link> 
+        <SearchBar onSearch={onSearch}/>
       </div>
-      <SearchBar onSearch={onSearch} />
     </div>
   );
 };
